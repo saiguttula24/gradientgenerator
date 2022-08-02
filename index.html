@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Gradient Generator</title>
+    <script src="angular.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body ng-app="myApp" ng-controller="myCtrl">
+    <div
+      id="background"
+      class="bg-container"
+      style="background-image: linear-gradient({{direction}},{{firstColor}},{{secondColor}});"
+    >
+    <h1 class="title">Gradient Generator</h1>
+      <div class="content-card">
+        <div class="color-card">
+          <div class="fcolor">
+            <label for="firstColor">Pick first color: </label>
+            <input type="color" ng-model="firstColor" id="firstColor" />
+          </div>
+          <div>
+            <label for="secondColor">Pick second color: </label>
+            <input type="color" ng-model="secondColor" id="secondColor" />
+          </div>
+        </div>
+        <div class="direction">
+          <label for="direction">Direction: </label>
+          <select ng-model="direction" id="direction">
+            <option value="to right">to right</option>
+            <option value="to left">to left</option>
+            <option value="to top">to top</option>
+            <option value="to bottom">to bottom</option>
+            <option value="to top right">to top right</option>
+            <option value="to top left">to top left</option>
+            <option value="to bottom right">to bottom right</option>
+            <option value="to bottom left">to bottom left</option>
+          </select>
+        </div>
+      </div>
+      <div class="css-card">
+        <h2>Css Code</h2>
+        <p>{{"background-image : " + "linear-gradient" + "(" + direction + "," + firstColor + "," + secondColor + ");"}}</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
